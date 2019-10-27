@@ -2,16 +2,20 @@
 layout: post
 title:  "The Ride In The Woods"
 date:   2018-01-23
-featured_image: road.jpg
+featured_image: plane.jpg
 tags: [Travel, Blogging]
 ---
 
 <strong>Minimalism</strong> describes movements in various forms of art and design, especially visual art and music, wherein artists intend to expose the essence or identity of a subject through eliminating all non-essential forms, features or concepts. Minimalism is any design or style wherein the simplest and fewest elements are used to create the maximum effect.
 <blockquote>I enjoy going on motorcycle trips and stopping in small towns and enjoying drinks with the locals.</blockquote>
 As a specific movement in the arts it is identified with developments in post–World War II Western Art, most strongly with American visual arts in the 1960s and early 1970s. Prominent artists associated with this movement include Donald Judd, John McCracken, Agnes Martin, Dan Flavin, Robert Morris, Anne Truitt, and Frank Stella. It derives from the reductive aspects of Modernism and is often interpreted as a reaction against Abstract expressionism and a bridge to Postminimal art practices. <a title="Minimalism Source" href="http://en.wikipedia.org/wiki/Minimalism" target="_blank">{ Source }</a>
+<script type="text/javascript" src="{{ site.baseurl }}/js/webmscroller.js"></script>
 
+<video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload" style="width:100%">
+<source type="video/webm; codecs=&quot;vp8, vorbis&quot;" src="https://github.com/ericksonc/ericksonc.github.io/raw/master/images/posts/hktlsmall.webm">
+<p>Sorry, your browser does not support the &lt;video&gt; element.</p>
+</video>
 <!--more-->
-
 <h2>Motorcycle Ride</h2>
 
 {% include image_full.html imageurl="/images/posts/riding-woods.jpg" title="Riding in the Woods" caption="Riding In The Woods" %}
