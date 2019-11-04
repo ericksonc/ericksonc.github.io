@@ -17,6 +17,9 @@ description: "Travel, work and life, one country at a time."
 # Tagline below the site title
 tagline: "To stay in one place is a fine way. But this is another one."
 
+# Google Analytics
+google_analytics: UA—XXXXXXXX-X
+
 # The subpath of your site, e.g. /blog, for generating urls
 baseurl:
 
@@ -38,17 +41,17 @@ navigation:
   url: /tags/
 
 # The shortname for your Disqus site to enable comments.
-disqus: justgoodthemes
+disqus: another-fine-way
 
 # Author information - author info at the bottom of the post
-author_name: "Chris Erickson"
-author_bio: "My name is Chris. For years I dreamed of quitting my job to travel the world while bootstrapping a business. This is what happened when I did it for real."
+author_name: "Chris"
+author_bio: "For years I dreamed of quitting my job, travelling the world, and creating my own business. Then I did. This is my story."
 author_url: "http://anotherfineway.com"
 #author_location: "Vilnius, Lithuania"
 #author_image: authorimage.jpg
 
 # Footer ad banner
-banner_url: "https://justgoodthemes.com/"
+banner_url: "https://myspiffysite.com/"
 banner_image: banner.jpg
 
 # Footer newsletter widget - add your form action url for MailChimp signup form here
@@ -62,7 +65,7 @@ mailchimp_url: "https://gmail.us5.list-manage.com/subscribe/post?u=da0681326531e
 #codepen_username: "username"
 #dribbble_username: "username"
 #medium_username: "@username"
-instagram_username: "Chris0522"
+instagram_username: "malaclypse2323"
 #pinterest_username: "username"
 #linkedin_username: "username"
 
