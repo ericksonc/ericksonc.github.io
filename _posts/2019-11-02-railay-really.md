@@ -34,7 +34,7 @@ The monkeys are cute, and fascinating to watch. They're also bold and brazen. We
 We sometimes saw them prowling the balconies. Needless to say, leaving the balcony door locked is important if you want to keep uninvited guests from snooping through all your stuff.
 
 <H2>The Bars</H2> 
-!!Barpic
+
 Railay's got no cars, but it does have bars, of all shapes and sizes. My favorite is The Black Pearl- it's kind of decked out pirate-style... but if Bob Marley was a pirate.
 
 {% include image_caption.html imageurl="/images/posts/barpic.jpg" caption = "The house band. 'I don't like it. I love it!'" %}
