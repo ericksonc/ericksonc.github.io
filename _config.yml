@@ -35,8 +35,8 @@ navigation:
   url: /
 - text: About
   url: /about/
-- text: Style Guide
-  url: /style-guide/
+#- text: Style Guide
+#  url: /style-guide/
 - text: Archives
   url: /tags/
 

@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Best Waves - Surfing In Spain"
-date:   2018-01-15
-featured_image: surfing.jpg
-tags: [Tips, Surfing, Travel]
+title:  "Digital Nomad Gear"
+date:   2019-10-31
+featured_image: allmystuff.jpg
+tags: [Gear, Travel]
 ---
 
 **Surfing** is a surface water sport in which the wave rider, referred to as a surfer, rides on the forward or deep face of a moving wave, which is usually carrying the surfer towards the shore. Waves suitable for surfing are primarily found in the ocean, but can also be found in lakes or in rivers in the form of a standing wave or tidal bore. However, surfers can also utilize artificial waves such as those from boat wakes and the waves created in artificial wave pools.
