@@ -11,7 +11,7 @@ Railay is an incredibly beautiful place tucked away in a small peninsula in  Kra
 {% include image_caption.html imageurl="/images/posts/longtail.JPG" title="Railay by Longtail" caption="Railay by Longtail" %}
 
 
-You can't get to Railay by car (there are no cars on Railay, and it's small enough to walk everywhere) - you've got to take a longtail boat. If you're coming from the east, you get to hop onto a pier. I was coming from the west, which meant I had to hop into knee-high water, with everything I own in this world strapped to my back! (This was when I felt my decision to get a bag that not only rolled but could convert into a backpack was truly vindicated.)
+You can't get to Railay by car; there are no cars on Railay, and it's small enough to walk everywhere. You've got to take a boat, most likely a longtail. If you're coming from the east, you get to hop onto a pier. I was coming from the west, which meant I had to hop into knee-high water, with everything I own in this world strapped to my back! (This was when I felt my decision to get a bag that not only rolled but could convert into a backpack was truly vindicated.)
 
 <!--more-->
 
