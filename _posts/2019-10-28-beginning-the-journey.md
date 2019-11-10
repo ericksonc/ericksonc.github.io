@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Beginning the Journey"
-date:   2019-10-30
+date:   2019-10-28
 featured_image: plane.jpg
 tags: [Travel, Blogging]
 ---

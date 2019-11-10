@@ -35,12 +35,11 @@ We sometimes saw them prowling the balconies. Needless to say, leaving the balco
 
 <H2>The Bars</H2> 
 
-Railay's got no cars, but it does have bars, of all shapes and sizes. My favorite is The Black Pearl- it's kind of decked out pirate-style... but if Bob Marley was a pirate.
+{% include gfy_caption.html gfyid="understatedpotableapatosaur" caption = "Where there's a beach bar, there must be fire dancing!'" %}
 
-{% include image_caption.html imageurl="/images/posts/barpic.jpg" caption = "The house band. 'I don't like it. I love it!'" %}
+Railay's got no cars, but it does have bars, of all shapes and sizes. My favorite is The Black Pearl- it's kind of decked out pirate-style... but if Bob Marley was a pirate. The folks that work there have a bunch of fun catchphrases, you may find yourself picking them up as well... "Railay! Really?" "I don't like it... I *love* it" "Hit that shit"
 
-Very chill atmosphere to enjoy your cocktail or beer (or "happy brownie" or "happy shake," which are also offered on the menu.
-
+Very chill atmosphere to enjoy your cocktail or beer (or "happy brownie" or "happy shake," which are also offered on the menu.) Also live music, whcih seems to get a bit better each time.
 
 {% include image_caption.html imageurl="/images/posts/hong.jpg" caption="Paradise Beach from the Hong Island Tour" %}
 
