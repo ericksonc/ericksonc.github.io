@@ -17,7 +17,7 @@ You can't get to Railay by car; there are no cars on Railay, and it's small enou
 
 <h2>Visiting Friends</H2>
 
-{% include image_caption.html imageurl="/images/posts/davejen.jpeg" title="Railay Beach" %}
+{% include image_caption.html imageurl="/images/posts/davejen.jpg" title="Dave and Jen" %}
 
 This leg of the journey was extra special as friends from back home were along, my "bro" Dave, and his girlfriend Jen. They'd been planning a ten day trip to Railay, Phi Phi and Phuket, and the three of us met up for their Railay leg, before I moved on to Lanta for a couple of months. 
 
@@ -28,7 +28,7 @@ Dave and I had stopped by Railay before when he visited me in HK, while it was J
 
 <h2>The Beach</H2>
 
-{% include image_caption.html imageurl="/images/posts/jenrailay.jpeg" title="Railay Beach" caption="Dave (left) and me on Railay Beach. Photo credit to Jen." %}
+{% include image_caption.html imageurl="/images/posts/jenrailay.jpg" title="Railay Beach" caption="Dave (left) and me on Railay Beach. Photo credit to Jen." %}
 
 Of the three beaches in Railay, the one to the south is the most stunning, next to a limestone cliff that soars hundreds of feet into the air. The water is warm, and the sand is soft.
 
