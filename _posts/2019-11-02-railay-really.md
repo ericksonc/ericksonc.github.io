@@ -54,8 +54,6 @@ Very chill atmosphere to enjoy your cocktail or beer (or "happy brownie" or "hap
 
 {% include image_caption.html imageurl="/images/posts/hong.jpg" caption="Paradise Beach from the Hong Island Tour" %}
 
-<H2>But Wait, There's More!</H2> 
-
 It's easy to book tours going to Phi Phi or the various islands / snorkeling spots around. This time we opted for the Hong Island tour.
 
 As always, Railay was a blast. This was, of course, just vacation. Next onto Ko Lanta, where I'll stay through most of December and actually get to work. 
