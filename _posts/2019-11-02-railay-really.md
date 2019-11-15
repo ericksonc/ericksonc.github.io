@@ -15,15 +15,26 @@ You can't get to Railay by car; there are no cars on Railay, and it's small enou
 
 <!--more-->
 
+<h2>Visiting Friends</H2>
+
+{% include image_caption.html imageurl="/images/posts/davejen.jpeg" title="Railay Beach" %}
+
+This leg of the journey was extra special as friends from back home were along, my "bro" Dave, and his girlfriend Jen. They'd been planning a ten day trip to Railay, Phi Phi and Phuket, and the three of us met up for their Railay leg, before I moved on to Lanta for a couple of months. 
+
+It was aawesome to get to hang out with folks I've known a long time- Dave and I met when we were thirteen- right at the beginning of embarking into parts unknown. 
+
+Dave and I had stopped by Railay before when he visited me in HK, while it was Jen's first time there. Both Dave and I got a vicarious kick out of seeing Jen react to all the incredible sights for the first time. 
+
+
 <h2>The Beach</H2>
 
-{% include image_caption.html imageurl="/images/posts/railaybeach.jpeg" title="Railay Beach" caption="Railay Beach" %}
+{% include image_caption.html imageurl="/images/posts/jenrailay.jpeg" title="Railay Beach" caption="Dave (left) and me on Railay Beach. Photo credit to Jen." %}
 
 Of the three beaches in Railay, the one to the south is the most stunning, next to a limestone cliff that soars hundreds of feet into the air. The water is warm, and the sand is soft.
 
 
 
-<h2>The Animals</h2>
+<h2>Planet of the Monkeys?</h2>
 
 On a trip to Railay you can expect to see all sorts of creatures. Monitor lizards. Crabs. And- especially- monkeys.
 
@@ -33,7 +44,7 @@ The monkeys are cute, and fascinating to watch. They're also bold and brazen. We
 
 We sometimes saw them prowling the balconies. Needless to say, leaving the balcony door locked is important if you want to keep uninvited guests from snooping through all your stuff.
 
-<H2>The Bars</H2> 
+<H2>Goodness Gracious, Great Bars and Fire</H2> 
 
 {% include gfy_caption.html gfyid="understatedpotableapatosaur" caption = "Where there's a beach bar, there must be fire dancing!'" %}
 
