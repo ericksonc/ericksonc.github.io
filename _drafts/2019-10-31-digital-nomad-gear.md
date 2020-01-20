@@ -14,8 +14,9 @@ Synchronised surfing, Manly Beach, New South Wales, 1938–46 The term surfing r
 
 <!--more-->
 
-<iframe src="https://player.vimeo.com/video/31830780" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/31830780">Hey Ho Let&#039;s Go Surfing</a> from <a href="https://vimeo.com/nathanoldfield">Nathan Oldfield</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<!----- START CODE — SONIX AUDIO EMBEDDABLE MEDIA PLAYER: www.sonix.ai ----->
+
 
 Another prominent form of surfing is body boarding, when a surfer rides a wave on a bodyboard, either lying on their belly, drop knee, or sometimes even standing up on a body board. Other types of surfing include knee boarding, surf matting (riding inflatable mats), and using foils. Body surfing, where the wave is surfed without a board, using the surfer's own body to catch and ride the wave, is very common and is considered by some to be the purest form of surfing.
 
