@@ -17,10 +17,12 @@ Meanwhile, with only around 100 confirmed cases here in Vietnam so far, and life
 {% include image_caption.html imageurl="/images/posts/apartment.jpg" caption="I've been seeing a lot of this view lately!" %}
 
 
-The picture at the top of this post is a view I've seen a lot of- I'm in a nice comfy apartment across the street from a park. 
+This is where I'm staying. It's a nice cozy apartment, in District 1 but a bit away from the bustling backpacker street. Across the street from a park I can see from my balcony.
+
+It's got a desk that's nice for working. I still need to get out and go to a coffee shop to work every now and then or I'll go nuts. Coffee shops and stuff are often still open, though mostly they close around 6 PM or so. 
 
 {% include image_caption.html imageurl="/images/posts/balcony.jpg" caption="View from the balcony" %}
 
-I face the same uncertainties as most people do, and those are compounded by being in a foreign land. But I've got enough resources to stay here for the foreseeable future, so I'm grateful to be in the position I'm in overall. 
+Right now I face the same uncertainties as most people do, and those are compounded by being in a foreign land. But I've got enough resources to stay here for the foreseeable future, so I'm grateful to be in the position I'm in overall. 
 
 Hope you all are staying safe out there. 
