@@ -84,6 +84,19 @@ textarea::placeholder {
   padding-right: var(--page-pad);
 }
 
+/* Reachable by screen readers, invisible on screen. */
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .eyebrow {
   font: var(--t-eyebrow-weight) var(--t-eyebrow-size) / 1 var(--font-mono);
   letter-spacing: var(--t-eyebrow-track);
@@ -151,11 +164,10 @@ textarea::placeholder {
   text-wrap: pretty;
 }
 
-/* --- video placeholder --------------------------------------------------
-   TODO(content): no video exists yet. This renders the designed frame as a
-   non-interactive still so nothing on the live page looks broken. When the
-   overview clip is ready, swap .video__frame for a real player/lightbox and
-   make .video__play a <button> again.
+/* --- video --------------------------------------------------------------
+   Two states in one frame: the poster cover (a real <button>) and, after a
+   click, the native <video>. Both fill .video__frame, so the 16/9 box never
+   reflows on swap.
 ------------------------------------------------------------------------- */
 
 .video {
@@ -174,6 +186,36 @@ textarea::placeholder {
     0 2px 8px oklch(15% 0.014 250 / 0.1);
 }
 
+.video__el {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--d-bg);
+}
+
+/* Poster + play affordance. Resets the UA button box so the frame's own
+   border and radius stay the visible edge. */
+.video__cover {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.video__poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .video__inner {
   position: absolute;
   inset: 0;
@@ -182,6 +224,14 @@ textarea::placeholder {
   align-items: center;
   justify-content: center;
   gap: 18px;
+  /* Darkens the poster so the play button and label stay legible over the
+     bright wallpaper in the frame. */
+  background: oklch(15% 0.014 250 / 0.55);
+  transition: background 160ms ease;
+}
+
+.video__cover:hover .video__inner {
+  background: oklch(15% 0.014 250 / 0.42);
 }
 
 .video__play {
@@ -193,12 +243,20 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.video__cover:hover .video__play {
+  transform: scale(1.06);
+  background: oklch(36% 0.0126 250);
 }
 
 .video__caption {
   font: var(--t-meta-weight) var(--t-meta-size) / 1 var(--font-ui);
   letter-spacing: var(--t-meta-track);
-  color: var(--d-ink-faint);
+  color: var(--d-ink);
   text-align: center;
 }
 

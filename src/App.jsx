@@ -1,6 +1,6 @@
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
-import VideoPlaceholder from './components/VideoPlaceholder.jsx'
+import Video from './components/Video.jsx'
 import FeatureRow from './components/FeatureRow.jsx'
 import InviteForm from './components/InviteForm.jsx'
 import Footer from './components/Footer.jsx'
@@ -61,7 +61,7 @@ export default function App() {
       <Header onRequestInvite={scrollToInvite} />
       <main>
         <Hero />
-        <VideoPlaceholder />
+        <Video />
         {FEATURES.map((f) => (
           <FeatureRow key={f.eyebrow} {...f} />
         ))}

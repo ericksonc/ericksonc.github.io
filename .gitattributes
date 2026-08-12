@@ -1,0 +1,10 @@
+# Binary media — never diff or merge these, and never normalize line endings.
+# The overview clip is ~6.7 MB and lives in history permanently, so re-encode
+# locally and only commit the final file.
+*.mp4 binary
+*.m4v binary
+*.webm binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.vtt text eol=lf
