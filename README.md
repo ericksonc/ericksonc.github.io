@@ -65,3 +65,10 @@ scripts/
 - **Screenshots are WebP**, downscaled from the design export (1.3 MB → 119 kB).
   `shots/orchestrate.webp` keeps its native width because the layout scales it
   to 186%.
+- **Logo and mark are SVG**, generated from `Omnica_Logo-01.svg` in the brand
+  folder by cropping the viewBox to the artwork's true bounds and dropping the
+  opaque black backing rect the Illustrator export includes. `brand/og.png` and
+  the favicons are rasterised from those SVGs.
+- **`width: auto` on the logo images is load-bearing.** Their intrinsic
+  `width`/`height` attributes are presentational hints that CSS `height` alone
+  doesn't override, so omitting it renders the mark stretched flat.

@@ -118,8 +118,12 @@ textarea::placeholder {
   padding-top: 28px;
 }
 
+/* width:auto is load-bearing -- the intrinsic width/height attributes on the
+   <img> are presentational hints, so without it the attribute width wins and
+   the mark renders stretched flat. Same for .footer__mark. */
 .header__logo {
   height: 22px;
+  width: auto;
   display: block;
 }
 
@@ -269,11 +273,24 @@ textarea::placeholder {
   border-radius: 14px;
 }
 
-/* Each shot is framed by a bespoke crop + feathered mask so it reads as a
-   detail lifted out of the product, not a boxed screenshot. */
+/* Each shot is a bespoke crop with feathered edges, so it reads as a detail
+   lifted out of the product rather than a boxed screenshot.
+
+   The feathering is split across two nested elements -- .shot carries the
+   vertical fade, .shot__inner the horizontal one -- so that each element has
+   exactly ONE mask layer. A single element with two layers requires
+   `mask-composite: intersect`, which Lightning CSS unavoidably autoprefixes to
+   `-webkit-mask-composite: source-in`; in WebKit that composites the bottom
+   layer against an empty destination and can blank the element entirely.
+   Nesting sidesteps compositing altogether and behaves identically everywhere. */
 .shot {
   position: relative;
   overflow: hidden;
+}
+
+.shot__inner {
+  position: absolute;
+  inset: 0;
 }
 
 .shot img {
@@ -283,13 +300,18 @@ textarea::placeholder {
 
 .shot--observe {
   aspect-ratio: 1.73;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 65%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 65%, transparent 100%);
 }
 
+/* Crops the source to x 0..1583 of 1600. The right bound is deliberate: past
+   it the capture includes the app window's own border, which reads as a stray
+   vertical line next to the "now" marker. The left bound is the window edge --
+   cropping any further in slices the first glyph off "CLAUDE CODE" / "flex2". */
 .shot--observe img {
-  width: 102.5%;
-  left: -2.5%;
-  top: -4%;
+  width: 101.07%;
+  left: 0;
+  top: -3.17%;
 }
 
 .shot--direct {
@@ -312,13 +334,19 @@ textarea::placeholder {
   top: 4%;
 }
 
+/* Vertical feather on the outer element ... */
 .shot--direct,
 .shot--orchestrate {
-  mask-image:
-    linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 10%, black 88%, transparent 100%);
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 88%, transparent 100%);
+}
+
+/* ... horizontal feather on the inner one. Same stops as the mockup's second
+   mask layer; splitting them across two elements only changes the mechanism. */
+.shot--direct .shot__inner,
+.shot--orchestrate .shot__inner {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 /* --- invite ------------------------------------------------------------- */
@@ -485,6 +513,7 @@ textarea::placeholder {
 
 .footer__mark {
   height: 20px;
+  width: auto;
   display: block;
   opacity: 0.85;
 }

@@ -28,3 +28,7 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Local Claude Code config and scratch output
+.claude/
+.omnica-local/
