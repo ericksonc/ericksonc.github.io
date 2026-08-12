@@ -36,6 +36,12 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: clip;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -75,6 +81,14 @@ textarea::placeholder {
   min-height: 100vh;
   background: var(--bg);
   color: var(--ink);
+}
+
+/* dvh tracks the iOS URL bar; a repeated declaration would be deduped by the
+   minifier, so the fallback lives in @supports instead. */
+@supports (min-height: 100dvh) {
+  .page {
+    min-height: 100dvh;
+  }
 }
 
 .wrap {
@@ -630,10 +644,69 @@ textarea::placeholder {
   :root {
     --page-pad: 20px;
     --t-display-mkt-size: 32px;
+    /* -0.025em reads too tight at 32px. */
+    --t-display-mkt-track: -0.02em;
     --t-display-app-size: 26px;
   }
 
+  .header {
+    padding-top: 20px;
+  }
+
+  /* "Request an invite" -> "Request invite" (matches the form submit copy);
+     the full label only clears a 375px viewport by ~2px. */
+  .btn__extra {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
   .hero__sub {
+    font-size: 16px;
+  }
+
+  .video {
+    padding-top: 32px;
+  }
+
+  /* A fixed 72px circle overwhelms the ~190px-tall frame. */
+  .video__inner {
+    gap: 12px;
+  }
+
+  .video__play {
+    width: 56px;
+    height: 56px;
+  }
+
+  .video__play svg {
+    width: 17px;
+    height: 20px;
+  }
+
+  .video__time {
+    left: 14px;
+    bottom: 12px;
+  }
+
+  .feature {
+    padding-top: 56px;
+  }
+
+  .feature__row,
+  .feature__row--flip {
+    gap: 24px;
+  }
+
+  .invite {
+    margin-top: 64px;
+  }
+
+  /* 16px defeats iOS Safari's focus auto-zoom, which fires below 16px. */
+  .form__input,
+  .form__textarea {
     font-size: 16px;
   }
 
@@ -654,7 +727,24 @@ textarea::placeholder {
     flex-direction: column;
     gap: 20px;
     text-align: center;
-    margin-top: 72px;
+    margin-top: 56px;
+    padding-top: 40px;
+    padding-bottom: 36px;
+  }
+}
+
+/* Very narrow phones (320-360px): keep the header on one line. */
+@media (max-width: 360px) {
+  .header {
+    gap: 12px;
+  }
+
+  .header__logo {
+    height: 18px;
+  }
+
+  .btn {
+    padding: 11px 14px;
   }
 }
 

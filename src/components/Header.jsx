@@ -9,7 +9,7 @@ export default function Header({ onRequestInvite }) {
         height="94"
       />
       <button className="btn" type="button" onClick={onRequestInvite}>
-        Request an invite
+        Request <span className="btn__extra">an </span>invite
       </button>
     </header>
   )
