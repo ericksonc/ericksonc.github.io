@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { FORMSPREE_ENDPOINT, IS_FORM_CONFIGURED } from '../config.js'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -9,6 +9,9 @@ export default function InviteForm() {
   const [error, setError] = useState('')
   const [pending, setPending] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  // Uncontrolled on purpose: a bot that fills the field does so through the
+  // DOM, not React's onChange, so state would never see the value.
+  const gotcha = useRef(null)
 
   async function onSubmit(e) {
     e.preventDefault()
@@ -39,6 +42,7 @@ export default function InviteForm() {
           email: value,
           usage: usage.trim(),
           _subject: 'Omnica closed beta — invite request',
+          _gotcha: gotcha.current?.value ?? '',
         }),
       })
 
@@ -47,7 +51,13 @@ export default function InviteForm() {
         return
       }
 
+      // Formspree reports field-level problems as {errors: [{message}]} and
+      // form-level ones (reCAPTCHA, disabled form, quota) as a bare {error}.
+      // Only the former is fit to show a visitor; the latter describes our
+      // dashboard config, so it goes to the console instead of the page --
+      // but it has to go *somewhere*, or a misconfigured form is invisible.
       const data = await res.json().catch(() => null)
+      console.error('[omnica] invite POST %d:', res.status, data?.error ?? data ?? '(no body)')
       setError(data?.errors?.[0]?.message || 'Something went wrong. Please try again.')
     } catch {
       setError('Could not reach the server. Please try again.')
@@ -75,25 +85,24 @@ export default function InviteForm() {
           </div>
         ) : (
           <form className="form" onSubmit={onSubmit} noValidate>
-            <div className="form__row">
-              <input
-                className="form__input"
-                type="email"
-                name="email"
-                autoComplete="email"
-                aria-label="Email address"
-                aria-invalid={error ? 'true' : undefined}
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                  setError('')
-                }}
-              />
-              <button className="form__submit" type="submit" disabled={pending}>
-                {pending ? 'Sending…' : 'Request invite'}
-              </button>
-            </div>
+            {/* DOM order is email -> usage -> submit so the tab sequence
+                follows the reading order. The submit button is lifted back up
+                beside the email field by grid placement, not by its position
+                here. */}
+            <input
+              className="form__input"
+              type="email"
+              name="email"
+              autoComplete="email"
+              aria-label="Email address"
+              aria-invalid={error ? 'true' : undefined}
+              placeholder="your@email.com"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value)
+                setError('')
+              }}
+            />
 
             <div className="form__field">
               <label className="form__label" htmlFor="usage">
@@ -111,8 +120,23 @@ export default function InviteForm() {
               <div className="form__hint">One sentence is plenty.</div>
             </div>
 
-            {/* Formspree's built-in honeypot -- bots fill it, humans never see it. */}
-            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" hidden />
+            <button className="form__submit" type="submit" disabled={pending}>
+              {pending ? 'Sending…' : 'Request invite'}
+            </button>
+
+            {/* Formspree's built-in honeypot -- bots fill it, humans never see
+                it. Read via ref and sent in the JSON body above; the field is
+                inert unless the request actually carries it. A filled _gotcha
+                makes Formspree drop the submission and still answer 200, so
+                the bot sees the same success state a human would. */}
+            <input
+              ref={gotcha}
+              type="text"
+              name="_gotcha"
+              tabIndex={-1}
+              autoComplete="off"
+              hidden
+            />
 
             {error && (
               <div className="form__error" role="alert">
