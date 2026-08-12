@@ -1,0 +1,79 @@
+/* Font sources for the two locked families. Named exactly as the tokens
+   reference them — General Sans (UI) and JetBrains Mono (code/data). These
+   bring real @font-face rules into the CSS closure; when the user uploads
+   local files, swap these @imports for the local @font-face blocks. */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,450,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Omnica tokens — copied from design system source of truth */
+
+:root {
+  /* LIGHT NEUTRALS */
+  --bg:         #fafaf7;
+  --surface:    #fcfbf7;
+  --ink:        #16181a;
+  --ink-soft:   #4a4f55;
+  --ink-faint:  #8a8f96;
+  --rule:       #d9d6cf;
+  --rule-soft:  #ebe8e1;
+
+  /* DARK NEUTRALS — hue 250 graphite-indigo (proposed, ratified 2026-06-01) */
+  --d-bg:         oklch(15% 0.0140 250);
+  --d-panel:      oklch(21% 0.0140 250);
+  --d-pop:        oklch(30% 0.0126 250);
+  --d-rule:       oklch(26% 0.0126 250);
+  --d-ink:        oklch(94% 0.0045 250);
+  --d-ink-soft:   oklch(76% 0.0067 250);
+  --d-ink-faint:  oklch(58% 0.0090 250);
+
+  /* ACCENT */
+  --accent-d:   oklch(78% 0.16 200);
+  --accent-l:   oklch(58% 0.16 220);
+
+  /* SEMANTIC SIGNALS */
+  --pending-d:  oklch(82% 0.16 78);
+  --pending-l:  oklch(70% 0.16 70);
+  --attn-d:     oklch(74% 0.22 295);
+  --attn-l:     oklch(58% 0.22 295);
+  --critical-d: oklch(72% 0.20 28);
+  --critical-l: oklch(58% 0.22 28);
+  --spice-d:    oklch(74% 0.20 340);
+  --spice-l:    oklch(60% 0.22 340);
+
+  /* TYPE */
+  --font-ui:    'General Sans', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  --t-display-mkt-size:    56px;
+  --t-display-mkt-lh:      1.05; /* @kind font */
+  --t-display-mkt-weight:  400;
+  --t-display-mkt-track:   -0.025em;
+
+  --t-display-app-size:    32px;
+  --t-display-app-lh:      1.15; /* @kind font */
+  --t-display-app-weight:  450;
+  --t-display-app-track:   -0.01em;
+
+  --t-heading-size:        20px;
+  --t-heading-lh:          1.3; /* @kind font */
+  --t-heading-weight:      500;
+  --t-heading-track:       -0.005em;
+
+  --t-body-size:           15px;
+  --t-body-lh:             1.55; /* @kind font */
+  --t-body-weight:         400;
+  --t-body-track:          0; /* @kind font */
+
+  --t-meta-size:           13px;
+  --t-meta-lh:             1.45; /* @kind font */
+  --t-meta-weight:         500;
+  --t-meta-track:          0.01em;
+
+  --t-eyebrow-size:        11px;
+  --t-eyebrow-weight:      600;
+  --t-eyebrow-track:       0.14em;
+
+  --t-mono-size:           12.5px;
+  --t-mono-lh:             1.55; /* @kind font */
+  --t-mono-weight:         400;
+}

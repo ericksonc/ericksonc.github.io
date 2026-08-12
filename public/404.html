@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Not found — Omnica</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#070c11" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/icon-32.png" />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,450,500,600&display=swap"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: oklch(15% 0.014 250);
+        --ink: oklch(94% 0.0045 250);
+        --ink-soft: oklch(76% 0.0067 250);
+        --ink-faint: oklch(58% 0.009 250);
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: 'General Sans', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        text-align: center;
+        padding: 40px 24px;
+      }
+      img {
+        height: 24px;
+        display: block;
+      }
+      h1 {
+        font: 400 clamp(28px, 6vw, 42px) / 1.1 inherit;
+        letter-spacing: -0.025em;
+        margin: 8px 0 0 0;
+      }
+      p {
+        font: 400 16px/1.55 inherit;
+        color: var(--ink-soft);
+        margin: 0;
+        max-width: 420px;
+      }
+      a.home {
+        font: 500 13px/1 inherit;
+        letter-spacing: 0.01em;
+        color: var(--bg);
+        background: var(--ink);
+        border-radius: 8px;
+        padding: 12px 20px;
+        text-decoration: none;
+        margin-top: 8px;
+      }
+      a.home:hover {
+        background: oklch(85% 0.0067 250);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/brand/omnica-logo.png" alt="Omnica" />
+    <h1>This page doesn't exist.</h1>
+    <p>The link may be out of date — Omnica's site was recently rebuilt.</p>
+    <a class="home" href="/">Back to omnica.ai</a>
+  </body>
+</html>

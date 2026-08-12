@@ -1,0 +1,579 @@
+/* ---------------------------------------------------------------------------
+   Omnica landing page — dark-only.
+
+   tokens.css is the design-system source of truth and is kept verbatim; it
+   defines the light neutrals on :root plus a parallel --d-* dark ramp. This
+   file is loaded after it and remaps the semantic names onto the dark ramp,
+   which is exactly what the mockup's [data-theme="dark"] block did.
+   To add a light mode later, move this block into a media query.
+--------------------------------------------------------------------------- */
+
+:root {
+  color-scheme: dark;
+
+  --bg: var(--d-bg);
+  --surface: var(--d-panel);
+  --ink: var(--d-ink);
+  --ink-soft: var(--d-ink-soft);
+  --ink-faint: var(--d-ink-faint);
+  --rule: var(--d-pop);
+  --rule-soft: var(--d-rule);
+  --critical: var(--critical-d);
+  --accent: var(--accent-d);
+  --btn-hover: oklch(85% 0.0067 250);
+
+  --page-max: 1080px;
+  --page-pad: 40px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+::selection {
+  background: oklch(78% 0.16 200 / 0.22);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--ink-faint);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- shared ------------------------------------------------------------- */
+
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.wrap {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+}
+
+.eyebrow {
+  font: var(--t-eyebrow-weight) var(--t-eyebrow-size) / 1 var(--font-mono);
+  letter-spacing: var(--t-eyebrow-track);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* Inverted pill button — light surface, dark label. */
+.btn {
+  font: var(--t-meta-weight) var(--t-meta-size) / 1 var(--font-ui);
+  letter-spacing: var(--t-meta-track);
+  color: var(--bg);
+  background: var(--ink);
+  border: none;
+  border-radius: 8px;
+  padding: 11px 18px;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+}
+
+/* --- header ------------------------------------------------------------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 28px;
+}
+
+.header__logo {
+  height: 22px;
+  display: block;
+}
+
+/* --- hero --------------------------------------------------------------- */
+
+.hero {
+  padding-top: 96px;
+  text-align: center;
+}
+
+.hero__title {
+  font: var(--t-display-mkt-weight) var(--t-display-mkt-size) / var(--t-display-mkt-lh)
+    var(--font-ui);
+  letter-spacing: var(--t-display-mkt-track);
+  margin: 0 auto;
+  max-width: 720px;
+  text-wrap: balance;
+}
+
+.hero__sub {
+  font: var(--t-body-weight) 17px / 1.55 var(--font-ui);
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin: 20px auto 0 auto;
+  text-wrap: pretty;
+}
+
+/* --- video placeholder --------------------------------------------------
+   TODO(content): no video exists yet. This renders the designed frame as a
+   non-interactive still so nothing on the live page looks broken. When the
+   overview clip is ready, swap .video__frame for a real player/lightbox and
+   make .video__play a <button> again.
+------------------------------------------------------------------------- */
+
+.video {
+  padding-top: 72px;
+}
+
+.video__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--d-panel);
+  border: 1px solid var(--d-pop);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 64px oklch(15% 0.014 250 / 0.18),
+    0 2px 8px oklch(15% 0.014 250 / 0.1);
+}
+
+.video__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.video__play {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 1px solid var(--d-rule);
+  background: var(--d-pop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video__caption {
+  font: var(--t-meta-weight) var(--t-meta-size) / 1 var(--font-ui);
+  letter-spacing: var(--t-meta-track);
+  color: var(--d-ink-faint);
+  text-align: center;
+}
+
+.video__time {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  font: 400 var(--t-mono-size) / 1 var(--font-mono);
+  color: var(--d-ink-faint);
+}
+
+/* --- feature rows ------------------------------------------------------- */
+
+.feature {
+  padding-top: 120px;
+}
+
+.feature__row {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.feature__row--flip {
+  flex-direction: row-reverse;
+}
+
+.feature__copy {
+  flex: 0 0 380px;
+}
+
+.feature__title {
+  font: var(--t-display-app-weight) var(--t-display-app-size) / var(--t-display-app-lh)
+    var(--font-ui);
+  letter-spacing: var(--t-display-app-track);
+  margin: 14px 0 0 0;
+  text-wrap: balance;
+}
+
+.feature__list {
+  list-style: none;
+  margin: 24px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feature__item {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  font: var(--t-body-weight) var(--t-body-size) / var(--t-body-lh) var(--font-ui);
+  color: var(--ink-soft);
+}
+
+.feature__item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  flex: none;
+  position: relative;
+  top: -3px;
+}
+
+.feature__media {
+  flex: 1;
+  min-width: 0;
+  background: var(--d-bg);
+  border-radius: 14px;
+}
+
+/* Each shot is framed by a bespoke crop + feathered mask so it reads as a
+   detail lifted out of the product, not a boxed screenshot. */
+.shot {
+  position: relative;
+  overflow: hidden;
+}
+
+.shot img {
+  position: absolute;
+  display: block;
+}
+
+.shot--observe {
+  aspect-ratio: 1.73;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 65%, transparent 100%);
+}
+
+.shot--observe img {
+  width: 102.5%;
+  left: -2.5%;
+  top: -4%;
+}
+
+.shot--direct {
+  aspect-ratio: 1.88;
+}
+
+.shot--direct img {
+  width: 100%;
+  left: 0;
+  top: -11%;
+}
+
+.shot--orchestrate {
+  aspect-ratio: 1.8;
+}
+
+.shot--orchestrate img {
+  width: 186%;
+  left: -30%;
+  top: 4%;
+}
+
+.shot--direct,
+.shot--orchestrate {
+  mask-image:
+    linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 88%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+/* --- invite ------------------------------------------------------------- */
+
+.invite {
+  margin-top: 120px;
+}
+
+.invite__card {
+  background: var(--surface);
+  border: 1px solid var(--rule-soft);
+  border-radius: 16px;
+  padding: 72px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.invite__title {
+  font: var(--t-display-app-weight) var(--t-display-app-size) / var(--t-display-app-lh)
+    var(--font-ui);
+  letter-spacing: var(--t-display-app-track);
+  margin: 16px 0 0 0;
+  max-width: 440px;
+  text-wrap: balance;
+}
+
+.invite__blurb {
+  font: var(--t-body-weight) var(--t-body-size) / var(--t-body-lh) var(--font-ui);
+  color: var(--ink-soft);
+  margin: 12px 0 0 0;
+  max-width: 420px;
+  text-wrap: pretty;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 32px;
+}
+
+.form__row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.form__input,
+.form__textarea {
+  font: 400 15px / 1.4 var(--font-ui);
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 120ms ease;
+}
+
+.form__input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 14px;
+}
+
+.form__textarea {
+  line-height: 1.5;
+  padding: 12px 14px;
+  resize: vertical;
+  width: 100%;
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  border-color: var(--ink-faint);
+}
+
+.form__submit {
+  height: 46px;
+  font: 500 15px / 1 var(--font-ui);
+  color: var(--bg);
+  background: var(--ink);
+  border: none;
+  border-radius: 8px;
+  padding: 0 22px;
+  cursor: pointer;
+  flex: none;
+  transition: background 120ms ease;
+}
+
+.form__submit:hover:not(:disabled) {
+  background: var(--btn-hover);
+}
+
+.form__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form__field {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form__label {
+  font: var(--t-meta-weight) var(--t-meta-size) / 1 var(--font-ui);
+  letter-spacing: var(--t-meta-track);
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
+.form__optional {
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+.form__hint {
+  font: 400 13px / 1.4 var(--font-ui);
+  color: var(--ink-faint);
+}
+
+.form__error {
+  font: var(--t-meta-weight) var(--t-meta-size) / 1.4 var(--font-ui);
+  color: var(--critical);
+  text-align: left;
+}
+
+.invite__done {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.invite__done-title {
+  font: 500 17px / 1.4 var(--font-ui);
+  color: var(--ink);
+}
+
+.invite__done-sub {
+  font: var(--t-body-weight) var(--t-body-size) / var(--t-body-lh) var(--font-ui);
+  color: var(--ink-soft);
+}
+
+/* --- footer ------------------------------------------------------------- */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 56px;
+  padding-bottom: 48px;
+  border-top: 1px solid var(--rule-soft);
+  margin-top: 96px;
+}
+
+.footer__mark {
+  height: 20px;
+  display: block;
+  opacity: 0.85;
+}
+
+.footer__meta {
+  font: var(--t-meta-weight) var(--t-meta-size) / 1 var(--font-ui);
+  letter-spacing: var(--t-meta-track);
+  color: var(--ink-faint);
+}
+
+/* --- responsive ---------------------------------------------------------
+   The mockup was authored at desktop width only. Scaling the type tokens
+   themselves keeps every heading in proportion without per-element rules.
+------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  :root {
+    --page-pad: 28px;
+    --t-display-mkt-size: 42px;
+  }
+
+  .hero {
+    padding-top: 64px;
+  }
+
+  .video {
+    padding-top: 48px;
+  }
+
+  .feature {
+    padding-top: 80px;
+  }
+
+  /* Copy above art, in reading order, regardless of desktop side. */
+  .feature__row,
+  .feature__row--flip {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+  }
+
+  .feature__copy {
+    flex: 1 1 auto;
+  }
+
+  .invite {
+    margin-top: 88px;
+  }
+
+  .invite__card {
+    padding: 56px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-pad: 20px;
+    --t-display-mkt-size: 32px;
+    --t-display-app-size: 26px;
+  }
+
+  .hero__sub {
+    font-size: 16px;
+  }
+
+  /* Stacked field + full-width action reads better than a cramped inline row. */
+  .form__row {
+    flex-direction: column;
+  }
+
+  .form__submit {
+    width: 100%;
+  }
+
+  .invite__card {
+    padding: 44px 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin-top: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

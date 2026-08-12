@@ -1,0 +1,21 @@
+{
+  "name": "omnica-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Omnica closed-beta landing page. Built with Vite + React, deployed to GitHub Pages at omnica.ai.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check:form": "node scripts/check-form-config.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.5",
+    "vite": "^8.2.1"
+  }
+}

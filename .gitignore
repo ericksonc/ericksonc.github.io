@@ -1,13 +1,6 @@
-# Jekyll (existing)
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-
-# Nuxt/Vue build output
-.nuxt
-# dist -- needed for GitHub Pages
+# Build output -- GitHub Actions builds and publishes this; it is no longer
+# committed. (Under the old Nuxt setup the built site WAS the repo contents.)
+dist
 
 # Node dependencies
 node_modules
@@ -35,6 +28,3 @@ Thumbs.db
 .env
 .env.*
 !.env.example
-
-# Generated files
-coverage
